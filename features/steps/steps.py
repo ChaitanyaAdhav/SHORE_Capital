@@ -123,3 +123,10 @@ def navigate_dir(context, direction):
 @then('I\s+(accept|dismiss)\s+alert')
 def alerthandling(context,condition):
     alerts.do_alert(context,condition)
+
+#please check this step
+@then('I\s+wait\s+(\d+)\s+seconds\s+for\s+element\s+having\s+(.+)\s+"(.*?)"\s+to\s+not\s+(display|exist)')
+def assert_notdisplayed(context, seconds, loc_type, loc_value, condition):
+    seconds = int(seconds)
+    loc_value = context.lookup(loc_value)
+    wait.element(context, loc_type, loc_value, condition, seconds)

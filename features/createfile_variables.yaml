@@ -27,4 +27,9 @@ update:
   notes: "Test Update File Automation"
   escrowcomp: "Escro_Comp"
 
+update2:
+  filename: "AutomationTest2"
+  lender: "Test Lender2"
+  notes: "Test Update File Automation Processor"
+  escrowcomp: "Escro_Comp2"
 

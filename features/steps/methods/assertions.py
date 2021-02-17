@@ -33,3 +33,10 @@ def assert_displayed(elem, present):
         return elem.is_displayed()
     else:
         return not elem.is_displayed()
+
+def assert_notdisplayed(elem, present):
+    if present:
+        return not elem.is_notdisplayed()
+
+    else:
+        return elem.is_notdisplayed()

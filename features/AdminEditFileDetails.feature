@@ -219,8 +219,9 @@ Feature: Test Edit File Details Model
 
     Scenario: To submit details
       Then I click on element having xpath "//*[@id='myModal']//button[@type='button'][2]"
-    #  Then I wait 15 seconds for element having xpath "//div[@class='modal-title']" to not display
+      Then I wait 15 seconds for element having xpath "//div[@class='modal-title']" to not display
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
+      Then I sleep for 25 seconds
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
       Then I enter "createfile::update::filename" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
@@ -228,17 +229,16 @@ Feature: Test Edit File Details Model
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]/span" should have partial text as "createfile::update::filename"
 
     Scenario: Verify updated File Name on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]/span" should have partial text as "createfile::update::filename"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::update::filename"
 
-    Scenario: Verify Received date is not changed on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[3]/span" should have partial text as "01.28"
+   # Scenario: Verify Received date is not changed on Dashboard
+    #  Then element having xpath "//*[@id='table_all']/tbody/tr/td[3]/span" should have partial text as "01.28"
 
     Scenario: Verify updated Lock Expiration date on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[4]/span" should have partial text as "01.21"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[4]" should have partial text as "01.21"
 
     Scenario: Verify updated TT on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[5]" should have partial text as "(S)"
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[5]/span" should have partial text as "01.17"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[5]" should have partial text as "01.17 (S)"
 
     Scenario: Verify Loan Officer name is not changed on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[6]" should have partial text as "C1_LO1"
@@ -257,12 +257,10 @@ Feature: Test Edit File Details Model
 
     Scenario: Verify updated CD on Dashboard
       Then I scroll to element having xpath "//*[@id='table_all']/tbody/tr/td[17]"
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]/span[1]" should have partial text as "R"
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]/span[2]" should have partial text as "01.20"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]" should have partial text as "01.22 R"
 
     Scenario: Verify updated Appr ord on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[13]/span[1]" should have partial text as "OR"
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[13]/span[2]" should have partial text as "01.20"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[13]" should have partial text as "01.20 OR"
 
     Scenario: Verify updated Escrow date on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[14]" should have partial text as "01.22"
@@ -271,5 +269,5 @@ Feature: Test Edit File Details Model
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::update::escrowcomp"
 
     Scenario: Verify updated PayOff Exp date on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[16]/span" should have partial text as "01.23"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[16]" should have partial text as "01.23"
 

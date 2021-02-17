@@ -5,8 +5,8 @@ Feature: Test Conversation History
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
       Then I enter "createfile::valid::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
-      Then I wait 15 seconds for element having xpath "//span[contains(text(),'AutomationTest')]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]/span" should have partial text as "createfile::valid::name"
+      Then I wait 15 seconds for element having xpath "//td[contains(text(),'AutomationTest')]" to display
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::valid::name"
       Then I click on element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[2]"
       Then I wait 5 seconds for element having xpath "//div[contains(text(),'Conversation Log')]" to display
       Then element having xpath "//div[contains(text(),'Conversation Log')]" should have partial text as "Conversation Log"
