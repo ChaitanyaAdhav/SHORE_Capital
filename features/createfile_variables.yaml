@@ -1,0 +1,30 @@
+valid:
+  name: "AutomationTest"
+  phone: "9834572789"
+  email: "automation@test.com"
+  lender: "Test Lender"
+  notes: "Test Create File Automation"
+  escrowcomp: "Escro Comp"
+  note2: "Update notes"
+
+invalid:
+  name1: "123456"
+  name2: "@#$%"
+  name3: "A123@"
+  phone1: "automation"
+  phone2: "1234@1234&"
+  phone3: "123456789"
+  phone4: "122344455556"
+  phone5: "0000000000"
+  email1: "testautomation"
+  email2: "test@auto"
+  email3: "test@auto."
+  email4: "12345654"
+
+update:
+  filename: "AutomationTest1"
+  lender: "Test Lender1"
+  notes: "Test Update File Automation"
+  escrowcomp: "Escro_Comp"
+
+

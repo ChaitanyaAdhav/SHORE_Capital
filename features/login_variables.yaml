@@ -1,0 +1,48 @@
+superadmin:
+  user: "admin"
+  password: "ph@7rePh2020"
+  name: ""
+
+invalid:
+  user: "SR999"
+  password: "Invalid@142"
+
+admin:
+  user: "CAdmin"
+  password: "admin"
+  name: "Chaitanya Admin"
+
+LoanOfficer1:
+  user: "LO1"
+  password: "LO1"
+  name: "C1_Lo1"
+
+LoanOfficer2:
+  user: "LO2"
+  password: "LO2"
+  name: "C1_Lo2"
+
+processor1:
+  user: "PO1"
+  password: "PO1"
+  name: "Ch1_Po1"
+
+processor2:
+  user: "PO2"
+  password: "PO2"
+  name: "Ch1_Po2"
+
+assistant1:
+  user: "A1"
+  password: "A1"
+  name: "C1_A1"
+
+assistant2:
+  user: "A2"
+  password: "A2"
+  name: "C1_A2"
+
+pa:
+  user: "PA1"
+  password: "PA1"
+  name: "Pa1"
