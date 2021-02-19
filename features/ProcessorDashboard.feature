@@ -1,5 +1,5 @@
 @processordashboard
-Feature: Validate Dashboard
+Feature: Validate Processors Dashboard
 
 	Scenario: Verify user should land on forward mortgage page
       Then element having xpath "//span[@class='section-title']" should have partial text as "Forward Mortgage Dashboard"
@@ -50,8 +50,8 @@ Feature: Validate Dashboard
       Then element having xpath "//*[@id='tabs_nav']/li[8]/a" should have partial text as "Archived"
       Then element having xpath "//*[@id='tabs_nav']/li[9]/a" should have partial text as "All"
 
-    Scenario: Verify Create file button is not available for processor login
-      Then element having xpath "//*[@id="loan-details"]//*[contains(text(),'Create File')]" should not be present
+    Scenario: Verify Create file button is available for processor login
+      Then element having xpath "//*[@id="loan-details"]//*[contains(text(),'Create File')]" should be present
 
     Scenario: Verify substatus available in Docs tab
       Then element having id "4-tab_substatus" should have partial text as "Docs Out"

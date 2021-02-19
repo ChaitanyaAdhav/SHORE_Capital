@@ -1,7 +1,7 @@
 @createtask
 Feature: Test Create Task for PA
 
-    Scenario: Navigate to Create File
+    Scenario: Navigate to Create Task
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
       Then I enter "createfile::update::filename" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"

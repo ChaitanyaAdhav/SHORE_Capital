@@ -1,5 +1,5 @@
-@admindashboard
-Feature: Validate Admins Dashboard
+@assistantdashboard
+Feature: Validate Processors Dashboard
 
 	Scenario: Verify user should land on forward mortgage page
       Then element having xpath "//span[@class='section-title']" should have partial text as "Forward Mortgage Dashboard"
@@ -9,7 +9,7 @@ Feature: Validate Admins Dashboard
       Then element having id "5-tab_substatus" should have partial text as "Docs Pending"
 
     Scenario: Verify table present on Dashboard
-      Then I wait 10 seconds for element having xpath "//table[@id='DataTables_Table_0']" to display
+      Then I wait 5 seconds for element having xpath "//table[@id='DataTables_Table_0']" to display
       Then element having xpath "//table[@id='DataTables_Table_0']" should be present
 
     Scenario: Verify Search option is present on Dashboard

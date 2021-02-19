@@ -1,11 +1,38 @@
-valid:
-  name: "AutomationTest"
-  phone: "9834572789"
-  email: "automation@test.com"
-  lender: "Test Lender"
-  notes: "Test Create File Automation"
+admin:
+  name: "AutomationTestAdmin"
+  phone: "9834572781"
+  email: "automation@test.admin"
+  lender: "Test Lender admin"
+  notes: "Test Create File Admin"
   escrowcomp: "Escro Comp"
-  note2: "Update notes"
+  note2: "Update note admin"
+
+loanofficer:
+  name: "AutomationTestLoan"
+  phone: "9834572782"
+  email: "automation@test.loan"
+  lender: "Test Lender loan"
+  notes: "Test Create File loan"
+  escrowcomp: "Escro Comp"
+  note2: "Update note loan"
+
+processor:
+  name: "AutomationTestPro"
+  phone: "9834572783"
+  email: "automation@test.pro"
+  lender: "Test Lender pro"
+  notes: "Test Create File pro"
+  escrowcomp: "Escro Comp"
+  note2: "Update note pro"
+
+assistant:
+  name: "AutomationTestAsst"
+  phone: "9834572784"
+  email: "automation@test.asst"
+  lender: "Test Lender asst"
+  notes: "Test Create File Asst"
+  escrowcomp: "Escro Comp"
+  note2: "Update note asst"
 
 invalid:
   name1: "123456"
@@ -24,7 +51,7 @@ invalid:
 update:
   filename: "AutomationTest1"
   lender: "Test Lender1"
-  notes: "Test Update File Automation"
+  notes: "Test Update File admin"
   escrowcomp: "Escro_Comp"
 
 update2:
