@@ -1,5 +1,5 @@
 @assistantdashboard
-Feature: Validate Processors Dashboard
+Feature: Validate Assistant Dashboard
 
 	Scenario: Verify user should land on forward mortgage page
       Then element having xpath "//span[@class='section-title']" should have partial text as "Forward Mortgage Dashboard"
@@ -132,7 +132,6 @@ Feature: Validate Processors Dashboard
       Then element having xpath "//*[@id='DataTables_Table_0']//th[13]" should have partial text as "Escrow Co"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[14]" should have partial text as "PayOff Exp"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[15]" should have partial text as "File Id"
-
 
     Scenario: Verify substatus available in Funded tab
       Then I click on element having id "5-status_tab"

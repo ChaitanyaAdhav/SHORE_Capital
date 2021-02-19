@@ -1,5 +1,5 @@
 @assistantconversetion
-Feature: Test Conversation History of Processor
+Feature: Test Conversation History of Assistant
 
     Scenario: Navigate to Conversation History
       Then I click on element having id "all-tab"
