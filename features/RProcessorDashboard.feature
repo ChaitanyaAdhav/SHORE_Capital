@@ -52,7 +52,7 @@ Feature: Validate Processor Dashboard for Reverse Mortgage
       Then element having xpath "//*[@id='tabs_nav']/li[10]/a" should have partial text as "Hold"
       Then element having xpath "//*[@id='tabs_nav']/li[11]/a" should have partial text as "All"
 
-    Scenario: Verify Create file button is available for Admin login
+    Scenario: Verify Create file button is available for Processor login
       Then element having xpath "//*[@id="loan-details"]//*[contains(text(),'Create File')]" should be present
 
     Scenario: Verify substatus available in New tab
