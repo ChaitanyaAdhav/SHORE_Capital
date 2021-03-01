@@ -1,4 +1,4 @@
-@loanofficerconversetion
+@loconversetion
 Feature: Test Conversation History of Loan Officer
 
     Scenario: Navigate to Conversation History

@@ -4,6 +4,9 @@ admin:
   email: "automation@test.admin"
   lender: "Test Lender admin"
   notes: "Test Create File Admin"
+  caseno: "Test1"
+  insurance: "123"
+  hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note admin"
 
@@ -13,6 +16,9 @@ loanofficer:
   email: "automation@test.loan"
   lender: "Test Lender loan"
   notes: "Test Create File loan"
+  caseno: "Test1"
+  insurance: "123"
+  hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note loan"
 
@@ -22,6 +28,9 @@ processor:
   email: "automation@test.pro"
   lender: "Test Lender pro"
   notes: "Test Create File pro"
+  caseno: "Test1"
+  insurance: "123"
+  hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note pro"
 
@@ -31,6 +40,9 @@ assistant:
   email: "automation@test.asst"
   lender: "Test Lender asst"
   notes: "Test Create File Asst"
+  caseno: "Test1"
+  insurance: "123"
+  hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note asst"
 
@@ -53,10 +65,16 @@ update:
   lender: "Test Lender1"
   notes: "Test Update File admin"
   escrowcomp: "Escro_Comp"
+  caseno: "Test2"
+  insurance: "12345"
+  hoa: "UpdateHOA"
 
 update2:
   filename: "AutomationTest2"
   lender: "Test Lender2"
   notes: "Test Update File Automation Processor"
   escrowcomp: "Escro_Comp2"
+  caseno: "Test3"
+  insurance: "1234"
+  hoa: "TestHOA"
 

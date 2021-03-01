@@ -1,12 +1,12 @@
-@admineditfile
+@processoreditfile
 Feature: Test Edit File Details Model
 
     Scenario: Navigate to Edit File Details model
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::admin::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I enter "createfile::processor::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
       Then I wait 15 seconds for element having xpath "//*[@id='table_all']/tbody/tr/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::name"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::processor::name"
       Then I click on element having xpath "//table[@id='table_all']/tbody/tr/td[7]"
       Then I wait 5 seconds for element having xpath "//div[@class='modal-title']" to display
       Then element having xpath "//div[@class='modal-title']" should have partial text as "Edit File Details"
@@ -27,8 +27,9 @@ Feature: Test Edit File Details Model
       Then element having xpath "//label[text()='Escrow Company']" should be present
       Then element having xpath "//label[text()='PayOff Exp']" should be present
 
+
     Scenario: Verify that File Name is reflected as per entered while file creation
-      Then element having xpath "//label[text()='File Name']/../input" should have attribute value as "createfile::admin::name"
+      Then element having xpath "//label[text()='File Name']/../input" should have attribute value as "createfile::processor::name"
 
   #  Scenario: Verify that Receive Date is reflected as per entered while file creation
    #   Then element having xpath "//label[text()='Receive Date']/../input" should have attribute value as "01/28/2021"
@@ -45,7 +46,7 @@ Feature: Test Edit File Details Model
       Then element having xpath "//label[text()='Loan Officer']/../input" should have attribute value as "C1_LO1"
 
     Scenario: Verify that Lender is reflected as per entered while file creation
-      Then element having xpath "//label[text()='Lender']/../input" should have attribute value as "createfile::admin::lender"
+      Then element having xpath "//label[text()='Lender']/../input" should have attribute value as "createfile::processor::lender"
 
     Scenario: Verify that Status is reflected as per entered while file creation
       Then element having xpath "//label[text()='Status']/../select" should have partial text as "Submission"
@@ -65,7 +66,7 @@ Feature: Test Edit File Details Model
       Then element having xpath "//label[text()='Escrow Opened']/../input" should have attribute value as "01/21/2021"
 
     Scenario: Verify that Escrow Company is reflected as per entered while file creation
-      Then element having xpath "//label[text()='Escrow Company']/../input" should have attribute value as "createfile::admin::escrowcomp"
+      Then element having xpath "//label[text()='Escrow Company']/../input" should have attribute value as "createfile::processor::escrowcomp"
 
     Scenario: Verify that user can edit FileName
       Then I clear input field having xpath "//label[text()='File Name']/../input"
@@ -226,7 +227,7 @@ Feature: Test Edit File Details Model
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
       Then I enter "createfile::update::filename" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
       Then I wait 15 seconds for element having xpath "//*[@id='table_all']/tbody/tr/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::update::filename"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]/span" should have partial text as "createfile::update::filename"
 
     Scenario: Verify updated File Name on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::update::filename"
@@ -257,7 +258,7 @@ Feature: Test Edit File Details Model
 
     Scenario: Verify updated CD on Dashboard
       Then I scroll to element having xpath "//*[@id='table_all']/tbody/tr/td[17]"
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]" should have partial text as "01.20 R"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]" should have partial text as "01.22 R"
 
     Scenario: Verify updated Appr ord on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[13]" should have partial text as "01.20 OR"
@@ -276,7 +277,7 @@ Feature: Test Edit File Details Model
       Then I wait 5 seconds for element having xpath "//div[@class='modal-title']" to display
       Then element having xpath "//div[@class='modal-title']" should have partial text as "Edit File Details"
       Then I clear input field having xpath "//label[text()='File Name']/../input"
-      Then I enter "createfile::admin::filename" into input field having xpath "//label[text()='File Name']/../input"
+      Then I enter "createfile::processor::filename" into input field having xpath "//label[text()='File Name']/../input"
       Then I click on element having xpath "//*[@id='myModal']//button[@type='button'][2]"
       Then I sleep for 5 seconds
 

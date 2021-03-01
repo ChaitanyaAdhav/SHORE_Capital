@@ -1,20 +1,23 @@
 import time
+from selenium import webdriver
 
 from behave import *
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
 
 from methods import nav, click, input, wait
 from methods.locator import locate_element
 from methods import assertions
 from methods import alerts
-
-
+from selenium import webdriver
 use_step_matcher("re")
 
 
 @given('I navigate to "([^\"]*)"')
 def navigate(context, url):
     nav.to(context, context.lookup(url))
+
 
 
 @then('I click on link having text "(.*?)"')
@@ -38,7 +41,8 @@ def assert_attr(context, loc_type, loc_value, present, attr_name, attr_value):
     loc_value = context.lookup(loc_value)
     elem = locate_element(context, loc_type, loc_value)
     present_check = False if present == "not" else True
-    assertions.assert_attr(elem, attr_name, attr_value, present_check)
+    F1 = assert_attr(elem, attr_name, attr_value, present_check)
+    print("echooooo", F1)
 
 
 @then('I\s+enter\s+"([^\"]*)"\s+into\s+input\s+field\s+having\s+(.+)\s+"([^\"]*)"')
@@ -113,6 +117,7 @@ def scroll(context, loc_type, loc_value):
     elem = locate_element(context, loc_type, loc_value)
     nav.scroll_to(elem)
 
+
 @then('I\s+navigate\s+(back|forward)')
 def navigate_dir(context, direction):
     if direction == 'forward':
@@ -120,13 +125,25 @@ def navigate_dir(context, direction):
     elif direction == 'back':
         context.browser.back()
 
-@then('I\s+(accept|dismiss)\s+alert')
-def alerthandling(context,condition):
-    alerts.do_alert(context,condition)
 
-#please check this step
+@then('I\s+(accept|dismiss)\s+alert')
+def alerthandling(context, condition):
+    alerts.do_alert(context, condition)
+
+
+# please check this step
 @then('I\s+wait\s+(\d+)\s+seconds\s+for\s+element\s+having\s+(.+)\s+"(.*?)"\s+to\s+not\s+(display|exist)')
 def assert_notdisplayed(context, seconds, loc_type, loc_value, condition):
     seconds = int(seconds)
     loc_value = context.lookup(loc_value)
     wait.element(context, loc_type, loc_value, condition, seconds)
+
+
+@then('I\s+switch\s+to\s+frame\s+having\s+(.+)\s+"(.*?)"')
+def switch_to_frame(context, loc_type, loc_value):
+    #elem = locate_element(context, loc_type, loc_value)
+    loc_value = int(loc_value)
+    context.browser.switch_to_frame(loc_value)
+    #driver = webdriver.Chrome(executable_path="D:\\Projects\\selenium-behave-master\\chromedriver.exe")
+
+

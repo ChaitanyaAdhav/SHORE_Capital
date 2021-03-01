@@ -4,6 +4,9 @@ Feature: Validate PA Dashboard
     Scenario: Verify user should land on Processor Assist Dashboard page
       Then element having xpath "//span[@class='section-title']" should have partial text as "Processor Assist Dashboard"
 
+    Scenario: Verify user should land on Follow Up page
+      Then element having id "-1-status_tab" should have partial text as "Follow Up"
+
     Scenario: Verify table present on Dashboard
       Then I wait 5 seconds for element having xpath "//table[@id='table_task_-1_-1']" to display
       Then element having xpath "//table[@id='table_task_-1_-1']" should be present
@@ -40,5 +43,20 @@ Feature: Validate PA Dashboard
       Then element having id "8-status_tab" should have partial text as "Order Payoffs"
       Then element having id "9-status_tab" should have partial text as "Docu Sign"
       Then element having id "0-status_tab" should have partial text as "All"
+
+    Scenario: Verify Content of table
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[1]" should have partial text as "#"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[2]" should have partial text as "Company Name"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[3]" should have partial text as "Task Type"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[4]" should have partial text as "Task Status"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[5]" should have partial text as "Task Id"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[6]" should have partial text as "File Id"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[7]" should have partial text as "File Name"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[8]" should have partial text as "Communication"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[9]" should have partial text as "Created By"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[10]" should have partial text as "Followup Date"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[11]" should have partial text as "Updated By"
+      Then element having xpath "//*[@id='table_task_-1_-1']//th[12]" should have partial text as "Updated Date"
+
 
 

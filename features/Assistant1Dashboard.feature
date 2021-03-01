@@ -5,6 +5,7 @@ Feature: Validate Assistant Dashboard
       Then element having xpath "//span[@class='section-title']" should have partial text as "Forward Mortgage Dashboard"
 
     Scenario: Verify substatus are available on dashboard
+      Then I click on element having id "1-status_tab"
       Then element having id "4-tab_substatus" should have partial text as "Docs Out"
       Then element having id "5-tab_substatus" should have partial text as "Docs Pending"
 

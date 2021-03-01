@@ -1,4 +1,4 @@
-@createfile
+@locreatefile
 Feature: Create File Menu
 
     Scenario: Navigate to create file page
@@ -40,7 +40,7 @@ Feature: Create File Menu
 
     Scenario: To enter Lender
       Then I scroll to element having xpath "//input[@name='lender']"
-      Then I enter "createfile::admin::lender" into input field having xpath "//input[@name='lender']"
+      Then I enter "createfile::loanofficer::lender" into input field having xpath "//input[@name='lender']"
 
     Scenario: To select Tax Transcripts Date (16 Jan 2021)
       Then I click on element having xpath "//label[text()='Tax Transcripts']/..//button"
@@ -74,7 +74,7 @@ Feature: Create File Menu
 
     Scenario: To enter Notes
       Then I scroll to element having xpath "//textarea[@name='note']"
-      Then I enter "createfile::admin::notes" into input field having xpath "//textarea[@name='note']"
+      Then I enter "createfile::loanofficer::notes" into input field having xpath "//textarea[@name='note']"
 
     Scenario: To select Float as No
       Then I click on element having xpath "//label[text()=' Float']/..//input[@value='N']"
@@ -88,12 +88,12 @@ Feature: Create File Menu
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='20']"
 
     Scenario: Enter Borrower details
-      Then I enter "createfile::admin::name" into input field having xpath "//input[@name='borrower_name']"
-      Then I enter "createfile::admin::phone" into input field having xpath "//input[@name='borrower_phone']"
-      Then I enter "createfile::admin::email" into input field having xpath "//input[@name='borrower_email']"
+      Then I enter "createfile::loanofficer::name" into input field having xpath "//input[@name='borrower_name']"
+      Then I enter "createfile::loanofficer::phone" into input field having xpath "//input[@name='borrower_phone']"
+      Then I enter "createfile::loanofficer::email" into input field having xpath "//input[@name='borrower_email']"
 
     Scenario: Enter Escrow Company
-      Then I enter "createfile::admin::escrowcomp" into input field having xpath "//input[@name='escrow_company']"
+      Then I enter "createfile::loanofficer::escrowcomp" into input field having xpath "//input[@name='escrow_company']"
 
     Scenario: To select Please Open as No
       Then I click on element having xpath "//label[text()='Please Open']/..//input[@value='N']"
@@ -117,11 +117,11 @@ Feature: Create File Menu
       Then I wait 20 seconds for element having xpath "//div[@id='loan-details']/div/span/a" to display
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::admin::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I enter "createfile::loanofficer::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
 
     Scenario: Verify File Name on Dashboard
       Then I wait 20 seconds for element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" should have partial text as "createfile::admin::name"
+      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" should have partial text as "createfile::loanofficer::name"
 
     Scenario: Verify Lock Expiration date on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[4]" should have partial text as "01.20"
@@ -133,7 +133,7 @@ Feature: Create File Menu
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[6]" should have partial text as "C1_LO1"
 
     Scenario: Verify Lender on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[7]" should have partial text as "createfile::admin::lender"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[7]" should have partial text as "createfile::loanofficer::lender"
 
     Scenario: Verify Status on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[9]" should have partial text as "Submission"
@@ -142,7 +142,7 @@ Feature: Create File Menu
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[10]" should have partial text as "Need to Disclose (New)"
 
     Scenario: Verify Notes on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[1]" should have partial text as "createfile::admin::notes"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[1]" should have partial text as "createfile::loanofficer::notes"
 
     Scenario: Verify CD on Dashboard
       Then I scroll to element having xpath "//*[@id='table_all']/tbody/tr/td[17]"
@@ -155,4 +155,4 @@ Feature: Create File Menu
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[14]" should have partial text as "01.21"
 
     Scenario: Verify Escrow Company on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::admin::escrowcomp"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::loanofficer::escrowcomp"

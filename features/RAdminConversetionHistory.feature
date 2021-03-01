@@ -1,5 +1,5 @@
-@adminconversetion
-Feature: Test Conversation History of Admin
+@radminconversetion
+Feature: Test Conversation History of Admin Reverse Mortgage
 
     Scenario: Navigate to Conversation History
       Then I click on element having id "all-tab"
@@ -7,7 +7,7 @@ Feature: Test Conversation History of Admin
       Then I enter "createfile::admin::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
       Then I wait 15 seconds for element having xpath "//td[contains(text(),'AutomationTestAdmin')]" to display
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::name"
-      Then I click on element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[2]"
+      Then I click on element having xpath "//*[@id='table_all']/tbody/tr/td[10]/span[2]"
       Then I wait 5 seconds for element having xpath "//div[contains(text(),'Conversation Log')]" to display
       Then element having xpath "//div[contains(text(),'Conversation Log')]" should have partial text as "Conversation Log"
 

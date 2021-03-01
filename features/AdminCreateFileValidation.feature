@@ -32,9 +32,9 @@ Feature: Create File Menu Validations
       Scenario: To fill all required fields with valid data
         Then I click on element having id "id_charge_processing_fee_0"
         Then I scroll to element having xpath "//input[@name='borrower_name']"
-        Then I enter "createfile::valid::name" into input field having xpath "//input[@name='borrower_name']"
-        Then I enter "createfile::valid::phone" into input field having xpath "//input[@name='borrower_phone']"
-        Then I enter "createfile::valid::email" into input field having xpath "//input[@name='borrower_email']"
+        Then I enter "createfile::admin::name" into input field having xpath "//input[@name='borrower_name']"
+        Then I enter "createfile::admin::phone" into input field having xpath "//input[@name='borrower_phone']"
+        Then I enter "createfile::admin::email" into input field having xpath "//input[@name='borrower_email']"
 
     Scenario: To check autofilled data
       Then element having xpath "//select[@name='status']/option[@selected='selected']" should have partial text as "Submission"
@@ -51,9 +51,9 @@ Feature: Create File Menu Validations
 
     Scenario: To Enter Name Phone and Email
       Then I scroll to element having xpath "//input[@name='borrower_name']"
-      Then I enter "createfile::valid::name" into input field having xpath "//input[@name='borrower_name']"
-      Then I enter "createfile::valid::phone" into input field having xpath "//input[@name='borrower_phone']"
-      Then I enter "createfile::valid::email" into input field having xpath "//input[@name='borrower_email']"
+      Then I enter "createfile::admin::name" into input field having xpath "//input[@name='borrower_name']"
+      Then I enter "createfile::admin::phone" into input field having xpath "//input[@name='borrower_phone']"
+      Then I enter "createfile::admin::email" into input field having xpath "//input[@name='borrower_email']"
 
     Scenario: To check validation1 of Borrower Name
       Then I clear input field having xpath "//input[@name='borrower_name']"
@@ -75,7 +75,7 @@ Feature: Create File Menu Validations
 
     Scenario: To Enter valid Borrower Name
       Then I clear input field having xpath "//input[@name='borrower_name']"
-      Then I enter "createfile::valid::name" into input field having xpath "//input[@name='borrower_name']"
+      Then I enter "createfile::admin::name" into input field having xpath "//input[@name='borrower_name']"
 
     Scenario: To check validation1 of Borrower Phone no
       Then I clear input field having xpath "//input[@name='borrower_phone']"
@@ -109,7 +109,7 @@ Feature: Create File Menu Validations
 
     Scenario: To enter valid Borrower Phone no
       Then I clear input field having xpath "//input[@name='borrower_phone']"
-      Then I enter "createfile::valid::phone" into input field having xpath "//input[@name='borrower_phone']"
+      Then I enter "createfile::admin::phone" into input field having xpath "//input[@name='borrower_phone']"
 
     Scenario: To check validation1 of Borrower Email id
       Then I clear input field having xpath "//input[@name='borrower_email']"
@@ -137,7 +137,7 @@ Feature: Create File Menu Validations
 
     Scenario: To check validation1 of Borrower Email id
       Then I clear input field having xpath "//input[@name='borrower_email']"
-      Then I enter "createfile::valid::email" into input field having xpath "//input[@name='borrower_email']"
+      Then I enter "createfile::admin::email" into input field having xpath "//input[@name='borrower_email']"
 
 
 

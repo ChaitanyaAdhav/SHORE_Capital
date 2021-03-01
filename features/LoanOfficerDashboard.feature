@@ -1,4 +1,4 @@
-@loanofficerdashboard
+@lodashboard
 Feature: Validate Loan Officers Dashboard
 
 	Scenario: Verify user should land on forward mortgage page
