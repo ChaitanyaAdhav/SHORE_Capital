@@ -1,4 +1,4 @@
-@rprocessorcreatefile
+@rassistantcreatefile
 Feature: Create File Menu Reverse Mortgage
 
   Scenario: Navigate to create file page
@@ -41,7 +41,7 @@ Feature: Create File Menu Reverse Mortgage
 
     Scenario: To enter Lender
       Then I scroll to element having xpath "//input[@name='lender']"
-      Then I enter "createfile::processor::lender" into input field having xpath "//input[@name='lender']"
+      Then I enter "createfile::assistant::lender" into input field having xpath "//input[@name='lender']"
 
     Scenario: To select Tax Transcripts Date (16 Jan 2021)
       Then I click on element having xpath "//select[@name='tax_transcript']"
@@ -67,13 +67,13 @@ Feature: Create File Menu Reverse Mortgage
 
     Scenario: To enter Notes
       Then I scroll to element having xpath "//textarea[@name='note']"
-      Then I enter "createfile::processor::notes" into input field having xpath "//textarea[@name='note']"
+      Then I enter "createfile::assistant::notes" into input field having xpath "//textarea[@name='note']"
 
     Scenario: Enter Case Number
-      Then I enter "createfile::processor::caseno" into input field having id "id_case_number"
+      Then I enter "createfile::assistant::caseno" into input field having id "id_case_number"
 
     Scenario: Enter Insurance Number
-      Then I enter "createfile::processor::insurance" into input field having id "id_insurance"
+      Then I enter "createfile::assistant::insurance" into input field having id "id_insurance"
 
     Scenario: To select 2nd apprisal
       Then I click on element having id "id_appraisal_2nd"
@@ -91,12 +91,12 @@ Feature: Create File Menu Reverse Mortgage
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='20']"
 
     Scenario: Enter Borrower details
-      Then I enter "createfile::processor::name" into input field having xpath "//input[@name='borrower_name']"
-      Then I enter "createfile::processor::phone" into input field having xpath "//input[@name='borrower_phone']"
-      Then I enter "createfile::processor::email" into input field having xpath "//input[@name='borrower_email']"
+      Then I enter "createfile::assistant::name" into input field having xpath "//input[@name='borrower_name']"
+      Then I enter "createfile::assistant::phone" into input field having xpath "//input[@name='borrower_phone']"
+      Then I enter "createfile::assistant::email" into input field having xpath "//input[@name='borrower_email']"
 
     Scenario: Enter Escrow Company
-      Then I enter "createfile::processor::escrowcomp" into input field having xpath "//input[@name='escrow_company']"
+      Then I enter "createfile::assistant::escrowcomp" into input field having xpath "//input[@name='escrow_company']"
 
     Scenario: To select Please Open as No
       Then I click on element having xpath "//label[text()='Please Open']/..//input[@value='N']"
@@ -110,7 +110,7 @@ Feature: Create File Menu Reverse Mortgage
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='21']"
 
     Scenario: Enter HOA
-      Then I enter "createfile::processor::hoa" into input field having id "id_hoa"
+      Then I enter "createfile::assistant::hoa" into input field having id "id_hoa"
 
     Scenario: To submit file
       Then I scroll to element having xpath "//div[@class='text-center']/button[@type='submit']"
@@ -120,20 +120,20 @@ Feature: Create File Menu Reverse Mortgage
       Then I wait 20 seconds for element having xpath "//div[@id='loan-details']/div/span/a" to display
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::processor::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I enter "createfile::assistant::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
 
     Scenario: Verify File Name on Dashboard
       Then I wait 20 seconds for element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" should have partial text as "createfile::processor::name"
+      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" should have partial text as "createfile::assistant::name"
 
     Scenario: Verify Case No on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[4]" should have partial text as "createfile::processor::caseno"
+      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[4]" should have partial text as "createfile::assistant::caseno"
 
     Scenario: Verify LO on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[5]" should have partial text as "C1_LO1"
 
     Scenario: Verify Lender on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[6]" should have partial text as "createfile::processor::lender"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[6]" should have partial text as "createfile::assistant::lender"
 
     Scenario: Verify Status on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[8]" should have partial text as "Docs"
@@ -142,19 +142,19 @@ Feature: Create File Menu Reverse Mortgage
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[9]" should have partial text as "Docs Out"
 
     Scenario: Verify Notes on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[10]/span[1]" should have partial text as "createfile::processor::notes"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[10]/span[1]" should have partial text as "createfile::assistant::notes"
 
     Scenario: Verify Appr ord on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[11]" should have partial text as "01.19 OR"
 
     Scenario: Verify Escrow Company on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]" should have partial text as "createfile::processor::escrowcomp"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[12]" should have partial text as "createfile::assistant::escrowcomp"
 
     Scenario: Verify Insurance on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[13]" should have partial text as "createfile::processor::insurance"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[13]" should have partial text as "createfile::assistant::insurance"
 
     Scenario: Verify HOA on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::processor::hoa"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::assistant::hoa"
 
     Scenario: Verify 2nd Apprisal on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[16]" should have partial text as "TBD"
