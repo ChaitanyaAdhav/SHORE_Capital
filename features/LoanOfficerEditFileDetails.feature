@@ -28,7 +28,7 @@ Feature: Test Edit File Details Model
       Then element having xpath "//label[text()='PayOff Exp']" should be present
 
     Scenario: Verify that File Name is reflected as per entered while file creation
-      Then element having xpath "//label[text()='File Name']/../input" should have  value as "createfile::loanofficer::name"
+      Then element having xpath "//label[text()='File Name']/../input" should have attribute value as "createfile::loanofficer::name"
 
   #  Scenario: Verify that Receive Date is reflected as per entered while file creation
    #   Then element having xpath "//label[text()='Receive Date']/../input" should have attribute value as "01/28/2021"

@@ -7,3 +7,4 @@ Feature: Valid logins
 		Then I click on element having xpath "//*[@type='submit']"
 		Then I wait 15 seconds for element having class "mx-1" to display
 		Then element having class "mx-1" should have partial text as "login::LoanOfficer1::name"
+

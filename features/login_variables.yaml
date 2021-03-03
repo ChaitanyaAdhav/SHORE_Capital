@@ -46,3 +46,8 @@ pa:
   user: "PA1"
   password: "PA1"
   name: "Pa1"
+
+kj:
+  user: "robin"
+  password: "Admin@123"
+  name: "Robin"
