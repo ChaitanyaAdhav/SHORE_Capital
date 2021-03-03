@@ -1,0 +1,8 @@
+admin:
+  communication1: "CreateTask"
+  communication2: "InProgressTask"
+  communication3: "InExceptionTask"
+  communication4: "CompletedTask"
+
+update:
+  communication1: "Update Comm"

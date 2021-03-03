@@ -33,6 +33,7 @@ Feature: Validate PA Dashboard
       Then I clear input field having xpath "//div[@id='table_task_0_0_filter']//input[@type='search']"
 
     Scenario: Verify Task Type tabs available on Dashboard
+      Then element having id "table_task_-1_-1" should have partial text as "Follow Up"
       Then element having id "1-status_tab" should have partial text as "File Setup"
       Then element having id "2-status_tab" should have partial text as "Open Escrow & Title"
       Then element having id "3-status_tab" should have partial text as "Order Appraisal"
