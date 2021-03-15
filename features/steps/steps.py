@@ -34,15 +34,17 @@ def assert_elem_text(context, loc_type, loc_value, present, partial, value):
     partial_check = True if partial == "partial" else False
     assertions.assert_text(elem, partial_check, value, present_check)
 
-
+# to check value of id or value .
 @then('element\s+having\s+(.+)\s+"([^\"]*)"\s+should\s*((?:not)?)\s+have\s+attribute\s+(.+)\s+as\s+"(.+)"')
 def assert_attr(context, loc_type, loc_value, present, attr_name, attr_value):
     attr_value = context.lookup(attr_value)
     loc_value = context.lookup(loc_value)
     elem = locate_element(context, loc_type, loc_value)
+    print(" elem ====",elem)
     present_check = False if present == "not" else True
-    F1 = assert_attr(elem, attr_name, attr_value, present_check)
-    print("echooooo", F1)
+    print(" attr_name ====", attr_name)
+    print(" attr_value ====", attr_value)
+    print(" present_check ====", present_check)
 
 
 @then('I\s+enter\s+"([^\"]*)"\s+into\s+input\s+field\s+having\s+(.+)\s+"([^\"]*)"')
@@ -131,7 +133,7 @@ def alerthandling(context, condition):
     alerts.do_alert(context, condition)
 
 
-# please check this step
+# please check this step      Incorrect step by CA
 @then('I\s+wait\s+(\d+)\s+seconds\s+for\s+element\s+having\s+(.+)\s+"(.*?)"\s+to\s+not\s+(display|exist)')
 def assert_notdisplayed(context, seconds, loc_type, loc_value, condition):
     seconds = int(seconds)
@@ -146,4 +148,33 @@ def switch_to_frame(context, loc_type, loc_value):
     context.browser.switch_to_frame(loc_value)
     #driver = webdriver.Chrome(executable_path="D:\\Projects\\selenium-behave-master\\chromedriver.exe")
 
+#Switch to default browser
+@then('I\s+switch\s+to\s+default')
+def switch_to_default(context):
+   # loc_value = int(loc_value)
+   # context.browser.switchTo().defaultContent(context.browser);
+    context.browser.switch_to.default_content()
 
+####### Incorrect step by CA
+# @then('I\s+wait\s+(\d+)\s+seconds\s+for\s+element\s+having\s+(.+)\s+(.*?)\s+should\s*((?:not)?)\s+have\s+attribute\s+(.+)\s+')
+# def assert_attr(context, loc_type, loc_value, present, attr_name, seconds, condition):
+#     attr_value = context.lookup(attr_value)
+#     loc_value = context.lookup(loc_value)
+#     elem = locate_element(context, loc_type, loc_value)
+#     print(" elem ====",elem)
+#     present_check = False if present == "not" else True
+#     print(" attr_name ====", attr_name)
+#     print(" attr_value ====", attr_value)
+#     print(" present_check ====", present_check)
+#     seconds = int(seconds)
+#     loc_value = context.lookup(loc_value)
+#     wait.element(context, loc_type, loc_value, condition, seconds)
+
+@then('element\s+having\s+(.+)\s+"([^\"]*)"\s+should\s*((?:not)?)\s+have\s*((?:partial)?)\s+text\s+"(.+)"')
+def assert_elem_text(context, loc_type, loc_value, present, partial, value):
+    value = context.lookup(value)
+    loc_value = context.lookup(loc_value)
+    elem = locate_element(context, loc_type, loc_value)
+    present_check = False if present == "not" else True
+    partial_check = True if partial == "partial" else False
+    assertions.assert_text2(elem, partial_check, value, present_check)

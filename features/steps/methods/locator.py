@@ -1,4 +1,7 @@
 from selenium.webdriver.common.by import By
+from selenium import webdriver
+
+driver = webdriver.firefox
 
 locator_types = {
     "text": By.LINK_TEXT,
@@ -7,7 +10,8 @@ locator_types = {
     "name": By.NAME,
     "id": By.ID,
     "class": By.CLASS_NAME,
-    "css": By.CSS_SELECTOR
+    "css": By.CSS_SELECTOR,
+   # by CA -  "value": webdriver.get_attribute("value")
 }
 
 

@@ -34,9 +34,23 @@ def assert_displayed(elem, present):
     else:
         return not elem.is_displayed()
 
+### Incorrect step by CA
 def assert_notdisplayed(elem, present):
     if present:
-        return not elem.is_notdisplayed()
-
+        return not elem.is_displayed()
     else:
-        return elem.is_notdisplayed()
+        return elem.is_displayed()
+
+def assert_text2(elem, partial, value, present):
+    text = elem.getText()
+    found = False
+    if partial:
+        if value in text:
+            found = True
+    else:
+        if value == text:
+            found = True
+    if present:
+        assert found
+    else:
+        assert(not found)
