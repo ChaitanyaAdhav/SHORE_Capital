@@ -9,6 +9,7 @@ admin:
   hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note admin"
+  instruction: "Processor Instructions"
 
 loanofficer:
   name: "AutomationTestLoan"
@@ -77,4 +78,17 @@ update2:
   caseno: "Test3"
   insurance: "1234"
   hoa: "TestHOA"
+
+doc:
+  audio: "D:\\SHORE_Doc\\AudioFile.mp3"
+  docx: "D:\\SHORE_Doc\\DOCX_385k.docx"
+  gif: "D:\\SHORE_Doc\\GIF_l1m.gif"
+  jpg: "D:\\SHORE_Doc\\JPG_5.4m.jpg"
+  pdf: "D:\\SHORE_Doc\\PDF_3.8m.pdf"
+  png: "D:\\SHORE_Doc\\PNG_22m.png"
+  ppt: "D:\\SHORE_Doc\\PPT_893k.ppt"
+  xls: "D:\\SHORE_Doc\\XLS_1m.xls"
+  xlsx: "D:\\SHORE_Doc\\XLSX_14k.xlsx"
+
+
 
