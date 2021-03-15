@@ -46,6 +46,15 @@ Feature: Validate Update Task Model
     Then element having xpath "//div[@id='TaskViewModal']//div[3]/button[2]" should be enabled
     Then element having xpath "//div[@id='TaskViewModal']//div[3]/button[2]" should have partial text as "Save"
 
+   Scenario Outline: Verify options available in Task Status Dropdown
+      Then element having xpath "//select[@name='task_status']/option[@value='<value>']" should have text as "<text>"
+      Examples:
+      |value| |text|
+      |1|      |Created|
+      |2|       |In Progress|
+      |3|       |In Exception|
+      |4|       |Completed|
+
   Scenario: Check default Task Status is Created
     Then element having xpath "//select[@name='task_status']" should have partial text as "Created"
 
