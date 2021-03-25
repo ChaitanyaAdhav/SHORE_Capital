@@ -66,7 +66,7 @@ def step_impl(context, seconds, loc_type, loc_value, condition):
     loc_value = context.lookup(loc_value)
     wait.element(context, loc_type, loc_value, condition, seconds)
 
-
+#check
 @then('element\s+having\s+(.+)\s+"([^\"]*)"\s+should\s+be\s+(enabled|disabled)')
 def assert_enabled(context, loc_type, loc_value, loc_state):
     loc_value = context.lookup(loc_value)
@@ -151,30 +151,30 @@ def switch_to_frame(context, loc_type, loc_value):
 #Switch to default browser
 @then('I\s+switch\s+to\s+default')
 def switch_to_default(context):
-   # loc_value = int(loc_value)
-   # context.browser.switchTo().defaultContent(context.browser);
     context.browser.switch_to.default_content()
 
-####### Incorrect step by CA
-# @then('I\s+wait\s+(\d+)\s+seconds\s+for\s+element\s+having\s+(.+)\s+(.*?)\s+should\s*((?:not)?)\s+have\s+attribute\s+(.+)\s+')
-# def assert_attr(context, loc_type, loc_value, present, attr_name, seconds, condition):
-#     attr_value = context.lookup(attr_value)
-#     loc_value = context.lookup(loc_value)
-#     elem = locate_element(context, loc_type, loc_value)
-#     print(" elem ====",elem)
-#     present_check = False if present == "not" else True
-#     print(" attr_name ====", attr_name)
-#     print(" attr_value ====", attr_value)
-#     print(" present_check ====", present_check)
-#     seconds = int(seconds)
-#     loc_value = context.lookup(loc_value)
-#     wait.element(context, loc_type, loc_value, condition, seconds)
-
-@then('element\s+having\s+(.+)\s+"([^\"]*)"\s+should\s*((?:not)?)\s+have\s*((?:partial)?)\s+text\s+"(.+)"')
-def assert_elem_text(context, loc_type, loc_value, present, partial, value):
-    value = context.lookup(value)
+###### Incorrect step by CA
+@then('I\s+wait\s+(\d+)\s+seconds\s+for\s+element\s+having\s+(.+)\s+(.*?)\s+should\s*((?:not)?)\s+have\s+attribute\s+(.+)\s+')
+def assert_attr(context, loc_type, loc_value, present, attr_name, seconds, condition):
     loc_value = context.lookup(loc_value)
     elem = locate_element(context, loc_type, loc_value)
     present_check = False if present == "not" else True
-    partial_check = True if partial == "partial" else False
-    assertions.assert_text2(elem, partial_check, value, present_check)
+    seconds = int(seconds)
+    loc_value = context.lookup(loc_value)
+    wait.element(context, loc_type, loc_value, condition, seconds)
+
+@then('I\s+switch\s+to\s+window\s+having\s+(.+)\s+"(.*?)"')
+def switch_to_window(context, loc_type, loc_value):
+    #elem = locate_element(context, loc_type, loc_value)
+    chwd = context.browser.window_handles
+    for w in chwd:
+   # loc_value = int(loc_value)
+        context.browser.switch_to_window(w)
+
+@then('I\s+close\s+current\s+tab')
+def close(context):
+    context.browser.close()
+
+
+
+
