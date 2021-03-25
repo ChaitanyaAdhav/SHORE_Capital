@@ -47,7 +47,22 @@ pa:
   password: "PA1"
   name: "Pa1"
 
-kj:
+paadmin:
+  user: "PAAdmin"
+  password: "admin"
+  name: "Pa Admin"
+
+kjpro:
   user: "robin"
   password: "Admin@123"
-  name: "Robin"
+  name: "Robin Parker"
+
+kjasst:
+  user: "Assistant01"
+  password: "Admin@123"
+  name: "Assistant01"
+
+kjlo:
+  user: "joely.perez"
+  password: "Admin@123"
+  name: "Joely Perez"

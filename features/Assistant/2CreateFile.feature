@@ -1,4 +1,4 @@
-@locreatefile
+@asstcreatefile
 Feature: Create File Menu
 
     Scenario: Navigate to create file page
@@ -18,9 +18,10 @@ Feature: Create File Menu
       Then element having xpath "//select[@name='sub_status_id']/option[@value='8']" should have partial text as "Need to Disclose (New)"
 
     Scenario: To select Assigned Processor
-      Then I click on element having xpath "//label[text()='Assigned Processor']/..//div[text()='---------']"
-      Then I click on element having xpath "//span[contains(text(),'Ch1_PO1')]"
-      Then element having xpath "//button[@title='Ch1_PO1']/div/div/div" should have partial text as "Ch1_PO1"
+      #Then I wait 5 seconds for element having xpath "//*[@id='assigned_id']" to display
+      Then I click on element having xpath "//*[@id='assigned_id']/.."
+      Then I click on element having xpath "//option[text()='Ch1_PO1']"
+      Then element having xpath "//option[text()='Ch1_PO1']" should have partial text as "Ch1_PO1"
 
     Scenario: To select Yes on Processing fee
       Then I click on element having id "id_charge_processing_fee_0"
@@ -34,17 +35,18 @@ Feature: Create File Menu
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='15']"
 
     Scenario: To select Loan Officer
-      Then I click on element having xpath "//label[text()=' Loan officer']/../div"
-      Then I click on element having xpath "//span[contains(text(),'C1_LO1')]"
-      Then element having xpath "//button[@title='C1_LO1']/div/div/div" should have partial text as "C1_LO1"
+      Then I click on element having xpath "//select[@name='lo_name']/.."
+      Then I click on element having xpath "//option[text()='LO1']"
+      Then element having xpath "//option[text()='LO1']" should have partial text as "LO1"
 
     Scenario: To enter Lender
       Then I scroll to element having xpath "//input[@name='lender']"
-      Then I enter "createfile::loanofficer::lender" into input field having xpath "//input[@name='lender']"
+      Then I enter "createfile::assistant::lender" into input field having xpath "//input[@name='lender']"
 
     Scenario: To select Tax Transcripts Date (16 Jan 2021)
-      Then I click on element having xpath "//label[text()='Tax Transcripts']/..//button"
-      Then I click on element having xpath "//span[text()='(O) ']"
+      Then I click on element having xpath "//select[@name='tax_transcript']/.."
+      Then I click on element having xpath "//option[text()='(O) ']"
+      Then I sleep for 1 seconds
       Then I click on element having xpath "//input[@name='tt_date']"
       Then I click on element having xpath "//div[@class='datepicker-days']//th[@class='datepicker-switch']"
       Then I click on element having xpath "//div[@class='datepicker-months']//th[@class='datepicker-switch']"
@@ -53,8 +55,8 @@ Feature: Create File Menu
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='16']"
 
     Scenario: To select Closing Disclosure Date (18 Jan 2021)
-      Then I click on element having xpath "//label[text()='Closing Disclosure']/..//button"
-      Then I click on element having xpath "//span[text()='S']"
+      Then I click on element having xpath "//select[@name='closing_disclosure']/.."
+      Then I click on element having xpath "//option[text()='S']"
       Then I click on element having xpath "//input[@name='cd_date']"
       Then I click on element having xpath "//div[@class='datepicker-days']//th[@class='datepicker-switch']"
       Then I click on element having xpath "//div[@class='datepicker-months']//th[@class='datepicker-switch']"
@@ -63,9 +65,10 @@ Feature: Create File Menu
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='18']"
 
     Scenario: To select Appraisal Ordered Date (19 Jan 2021)
-      Then I click on element having xpath "//label[text()='Appraisal Ordered']/..//button"
-      Then I click on element having xpath "//label[text()='Appraisal Ordered']/..//span[text()='IN']"
-      Then I click on element having xpath "//input[@name='ad_date']"
+      Then I click on element having xpath "//select[@name='appraisal_ordered']/.."
+      Then I click on element having xpath "//option[text()='OR ']"
+      Then I sleep for 1 seconds
+      Then I click on element having xpath "//input[@id='ad_date']"
       Then I click on element having xpath "//div[@class='datepicker-days']//th[@class='datepicker-switch']"
       Then I click on element having xpath "//div[@class='datepicker-months']//th[@class='datepicker-switch']"
       Then I click on element having xpath "//div[@class='datepicker-years']//span[text()='2021']"
@@ -74,7 +77,7 @@ Feature: Create File Menu
 
     Scenario: To enter Notes
       Then I scroll to element having xpath "//textarea[@name='note']"
-      Then I enter "createfile::loanofficer::notes" into input field having xpath "//textarea[@name='note']"
+      Then I enter "createfile::assistant::notes" into input field having xpath "//textarea[@name='note']"
 
     Scenario: To select Float as No
       Then I click on element having xpath "//label[text()=' Float']/..//input[@value='N']"
@@ -88,12 +91,15 @@ Feature: Create File Menu
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='20']"
 
     Scenario: Enter Borrower details
-      Then I enter "createfile::loanofficer::name" into input field having xpath "//input[@name='borrower_name']"
-      Then I enter "createfile::loanofficer::phone" into input field having xpath "//input[@name='borrower_phone']"
-      Then I enter "createfile::loanofficer::email" into input field having xpath "//input[@name='borrower_email']"
+      Then I enter "createfile::assistant::firstname" into input field having xpath "//input[@name='borrower_name']"
+      Then I enter "createfile::assistant::middlename" into input field having xpath "//input[@name='borrower_middle_name']"
+      Then I enter "createfile::assistant::lastname" into input field having xpath "//input[@name='borrower_last_name']"
+      Then I enter "createfile::assistant::suffix" into input field having xpath "//input[@name='borrower_suffix']"
+      Then I enter "createfile::assistant::phone" into input field having xpath "//input[@name='borrower_phone']"
+      Then I enter "createfile::assistant::email" into input field having xpath "//input[@name='borrower_email']"
 
     Scenario: Enter Escrow Company
-      Then I enter "createfile::loanofficer::escrowcomp" into input field having xpath "//input[@name='escrow_company']"
+      Then I enter "createfile::assistant::escrowcomp" into input field having xpath "//input[@name='escrow_company']"
 
     Scenario: To select Please Open as No
       Then I click on element having xpath "//label[text()='Please Open']/..//input[@value='N']"
@@ -109,19 +115,83 @@ Feature: Create File Menu
     Scenario: To select Escrow fee as No
       Then I click on element having xpath "//label[text()=' Has Loan Officer Requested Escrow Fees']/..//input[@value='N']"
 
+#    Scenario Outline: Upload Documents
+#      Then I enter "createfile::doc::<value>" into input field having xpath "//input[@name='filepond'][1]"
+#      Examples:
+#        |value|
+#        |audio|
+#        |docx|
+#        |gif|
+#      #  |jpg|
+#        |pdf|
+#        |png|
+#        |ppt|
+#        |xls|
+#        |xlsx|
+
+    Scenario: Upload Doc
+      Then I scroll to element having xpath "//input[@name='filepond']"
+      Then I enter "createfile::doc::audio" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::docx" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::gif" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::jpg" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::pdf" into input field having xpath "//input[@class='filepond--browser']"
+      #Then I enter "createfile::doc::png" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::ppt" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::xls" into input field having xpath "//input[@class='filepond--browser']"
+      Then I enter "createfile::doc::xlsx" into input field having xpath "//input[@class='filepond--browser']"
+
     Scenario: To submit file
+      Then I sleep for 30 seconds
       Then I scroll to element having xpath "//div[@class='text-center']/button[@type='submit']"
       Then I click on element having xpath "//div[@class='text-center']/button[@type='submit']"
+
+    Scenario: Verify User have navigated to add Instruction popup
+      Then I sleep for 5 seconds
+      Then I switch to frame having index "0"
+      Then I wait 20 seconds for element having xpath "//form[@id='Add_the_notes']//h5" to display
+      Then element having xpath "//form[@id='Add_the_notes']//h5" should have partial text as "Please add processing instructions here"
+
+    Scenario: Verify File created alert is displayed
+      Then element having xpath "//form[@id='Add_the_notes']//div[@role='alert']" should have partial text as "createfile::assistant::lastname"
+
+    Scenario: Verify File ID is displayed in model
+      Then element having xpath "//form[@id='Add_the_notes']//div[@class='col-sm'][1]//b" should have partial text as "File Id:"
+
+    Scenario: Verify assigned processor is displayed in model
+      Then element having xpath "//form[@id='Add_the_notes']//div[@class='col-sm'][3]//b" should have partial text as "Assigned Processor:"
+      Then element having xpath "//form[@id='Add_the_notes']//span[@id='text_assigned_id']" should have partial text as "Ch1_PO1"
+
+    Scenario: Verify there is Cancel & Submit button in model
+      Then element having xpath "//form[@id='Add_the_notes']//button[1]" should have partial text as "Cancel"
+      Then element having xpath "//form[@id='Add_the_notes']//button[2]" should have partial text as "Submit"
+
+    Scenario: Add Processing instructions
+      Then I enter "createfile::assistant::instruction" into input field having xpath "//form[@id='Add_the_notes']//textarea"
+      Then I click on element having xpath "//form[@id='Add_the_notes']//button[2]"
+      Then I sleep for 3 seconds
+
+    ##############################
+    Scenario: Navigate to Documents
+      Then I wait 10 seconds for element having xpath "//a[@id='documents-list']" to display
+      Then I click on element having xpath "//a[@id='documents-list']"
+      Then I wait 10 seconds for element having xpath "//span[text()='Upload Documents']" to display
+      Then element having xpath "//span[text()='Upload Documents']" should have partial text as "Upload Documents"
+########################
+
+    Scenario: Navigate to Dashboard
+      Then I switch to default
+      Then I click on element having xpath "//*[text()='Back to Dashboard']"
 
     Scenario: Verify created file is displayed on dashboard
       Then I wait 20 seconds for element having xpath "//div[@id='loan-details']/div/span/a" to display
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::loanofficer::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I enter "createfile::assistant::lastname" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
 
     Scenario: Verify File Name on Dashboard
       Then I wait 20 seconds for element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" should have partial text as "createfile::loanofficer::name"
+      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[2]" should have partial text as "createfile::assistant::lastname"
 
     Scenario: Verify Lock Expiration date on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[4]" should have partial text as "01.20"
@@ -133,7 +203,7 @@ Feature: Create File Menu
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[6]" should have partial text as "C1_LO1"
 
     Scenario: Verify Lender on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[7]" should have partial text as "createfile::loanofficer::lender"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[7]" should have partial text as "createfile::assistant::lender"
 
     Scenario: Verify Status on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[9]" should have partial text as "Submission"
@@ -142,17 +212,17 @@ Feature: Create File Menu
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[10]" should have partial text as "Need to Disclose (New)"
 
     Scenario: Verify Notes on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[1]" should have partial text as "createfile::loanofficer::notes"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[1]" should have partial text as "createfile::assistant::instruction"
 
     Scenario: Verify CD on Dashboard
       Then I scroll to element having xpath "//*[@id='table_all']/tbody/tr/td[17]"
       Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[12]" should have partial text as "01.18 S"
 
     Scenario: Verify Appr ord on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[13]" should have partial text as "01.19 IN"
+      Then element having xpath "//*[@id='table_all']/tbody/tr[1]/td[13]" should have partial text as "01.19 OR"
 
     Scenario: Verify Escrow date on Dashboard
       Then element having xpath "//*[@id='table_all']/tbody/tr/td[14]" should have partial text as "01.21"
 
     Scenario: Verify Escrow Company on Dashboard
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::loanofficer::escrowcomp"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[15]" should have partial text as "createfile::assistant::escrowcomp"

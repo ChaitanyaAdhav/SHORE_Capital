@@ -1,5 +1,8 @@
 admin:
-  name: "AutomationTestAdmin"
+  firstname: "Test"
+  lastname: "AutomationTestAdmin"
+  middlename: "admin"
+  suffix: "Jr"
   phone: "9834572781"
   email: "automation@test.admin"
   lender: "Test Lender admin"
@@ -12,7 +15,10 @@ admin:
   instruction: "Processor Instructions"
 
 loanofficer:
-  name: "AutomationTestLoan"
+  firstname: "Test"
+  lastname: "AutomationTestLoan"
+  middlename: "Processor"
+  suffix: "Jr"
   phone: "9834572782"
   email: "automation@test.loan"
   lender: "Test Lender loan"
@@ -22,9 +28,13 @@ loanofficer:
   hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note loan"
+  instruction: "LO Instructions Pro"
 
 processor:
-  name: "AutomationTestPro"
+  firstname: "Test"
+  lastname: "AutomationTestPO"
+  middlename: "Processor"
+  suffix: "Jr"
   phone: "9834572783"
   email: "automation@test.pro"
   lender: "Test Lender pro"
@@ -34,9 +44,12 @@ processor:
   hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note pro"
+  instruction: "Processor Instructions Pro"
 
 assistant:
-  name: "AutomationTestAsst"
+  firstname: "Test"
+  lastname: "AutomationTestAsst"
+  middlename: "Assistant"
   phone: "9834572784"
   email: "automation@test.asst"
   lender: "Test Lender asst"
@@ -46,6 +59,7 @@ assistant:
   hoa: "TestHOA"
   escrowcomp: "Escro Comp"
   note2: "Update note asst"
+  instruction: "Processor Instructions Asst"
 
 invalid:
   name1: "123456"
@@ -69,6 +83,7 @@ update:
   caseno: "Test2"
   insurance: "12345"
   hoa: "UpdateHOA"
+  communication1: "Update Comm"
 
 update2:
   filename: "AutomationTest2"
@@ -83,12 +98,17 @@ doc:
   audio: "D:\\SHORE_Doc\\AudioFile.mp3"
   docx: "D:\\SHORE_Doc\\DOCX_385k.docx"
   gif: "D:\\SHORE_Doc\\GIF_l1m.gif"
-  jpg: "D:\\SHORE_Doc\\JPG_5.4m.jpg"
-  pdf: "D:\\SHORE_Doc\\PDF_3.8m.pdf"
+  jpg: "D:\\SHORE_Doc\\JPG_5m.jpg"
+  pdf: "D:\\SHORE_Doc\\PDF_3m.pdf"
   png: "D:\\SHORE_Doc\\PNG_22m.png"
   ppt: "D:\\SHORE_Doc\\PPT_893k.ppt"
   xls: "D:\\SHORE_Doc\\XLS_1m.xls"
   xlsx: "D:\\SHORE_Doc\\XLSX_14k.xlsx"
+  viewdoc: "D:\\SHORE_Doc\\view.jpg"
+  folder1: "Test1"
+  folder2: "Test2"
+
+
 
 
 

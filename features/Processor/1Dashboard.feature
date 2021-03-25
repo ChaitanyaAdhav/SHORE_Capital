@@ -1,10 +1,11 @@
-@processordashboard
-Feature: Validate Processors Dashboard
+@prodashboard
+Feature: Validate Assistant Dashboard
 
 	Scenario: Verify user should land on forward mortgage page
       Then element having xpath "//span[@class='section-title']" should have partial text as "Forward Mortgage Dashboard"
 
     Scenario: Verify substatus are available on dashboard
+      Then I click on element having id "1-status_tab"
       Then element having id "4-tab_substatus" should have partial text as "Docs Out"
       Then element having id "5-tab_substatus" should have partial text as "Docs Pending"
 
@@ -22,6 +23,7 @@ Feature: Validate Processors Dashboard
       Then element having xpath "//*[@id='DataTables_Table_0_length']/label/select" should have partial text as "100"
 
     Scenario: Verify content of table for Docs
+      Then I sleep for 2 seconds
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[3]" should have partial text as "Rec.Dt"
@@ -64,6 +66,7 @@ Feature: Validate Processors Dashboard
       Then element having id "6-tab_substatus" should have partial text as "In-Process"
 
     Scenario: Verify content of table for Approved
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
@@ -92,6 +95,7 @@ Feature: Validate Processors Dashboard
       Then element having id "12-tab_substatus" should have partial text as "Problems"
 
     Scenario: Verify content of table for Submission
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
@@ -115,6 +119,7 @@ Feature: Validate Processors Dashboard
       Then element having id "13-tab_substatus" should have partial text as "Hold"
 
     Scenario: Verify content of table for Hold
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
@@ -133,12 +138,12 @@ Feature: Validate Processors Dashboard
       Then element having xpath "//*[@id='DataTables_Table_0']//th[14]" should have partial text as "PayOff Exp"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[15]" should have partial text as "File Id"
 
-
     Scenario: Verify substatus available in Funded tab
       Then I click on element having id "5-status_tab"
       Then element having id "14-tab_substatus" should have partial text as "Funded"
 
     Scenario: Verify content of table for Funded
+      Then I sleep for 3 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
@@ -162,6 +167,7 @@ Feature: Validate Processors Dashboard
       Then element having id "15-tab_substatus" should have partial text as "Sent to Audit"
 
     Scenario: Verify content of table for Hold
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
@@ -185,6 +191,7 @@ Feature: Validate Processors Dashboard
       Then element having id "16-tab_substatus" should have partial text as "Paid Out"
 
     Scenario: Verify content of table for Paid Out
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
@@ -208,6 +215,7 @@ Feature: Validate Processors Dashboard
       Then element having id "17-tab_substatus" should have partial text as "Archived"
 
     Scenario: Verify content of table for Archived
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"

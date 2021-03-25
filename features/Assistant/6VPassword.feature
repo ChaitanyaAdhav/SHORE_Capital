@@ -1,29 +1,8 @@
-@adminviewpassword
-Feature: Test View Page for Admin Login
+@asstviewpassword
+Feature: Test View Page for Assistant Login (Manage Password)
 
-  Scenario: I go to the login page
-    Given I navigate to "https://shorecapital-dev.azurewebsites.net/001"
-    Then element having xpath "//*[@type='submit']" should have text as "Login"
-    Then I maximize browser window
 
-  Scenario: I login with valid credentials
-    Then I enter "login::admin::user" into input field having xpath "//*[@name='user_name']"
-    Then I enter "login::admin::password" into input field having xpath "//*[@name='password']"
-    Then I click on element having xpath "//*[@type='submit']"
-    Then I wait 15 seconds for element having class "mx-1" to display
-    Then element having class "mx-1" should have partial text as "login::admin::name"
-
-  Scenario: Navigate to View page
-    Then I click on element having id "all-tab"
-    Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-    #Then I enter "DocTest" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
-    Then I enter "createfile::admin::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
-    #Then I wait 5 seconds for element having xpath "//table[@id='table_all']//td[text()='DocTest']" to display
-    Then I wait 5 seconds for element having xpath "//table[@id='table_all']//td[text()='AutomationTestAdmin']" to display
-    Then I click on element having xpath "//*[@id='table_all']/tbody/tr[1]/td[1]/a"
-
-  Scenario: Verify that user have landed on Manage Password page
-    Then I switch to frame having index "0"
+  Scenario: Navigate to Manage Password page
     Then I wait 15 seconds for element having xpath "//div[@id='loan_detail']/div/span" to display
     Then I click on element having id "password-details-list"
     Then element having xpath "//div[@id='password-details']/div/span" should have partial text as "Manage Password"
@@ -49,10 +28,10 @@ Feature: Test View Page for Admin Login
   Scenario: Open Type dropdown
     Then I wait 10 seconds for element having xpath "//label[text()='Type']/..//option[text()='---------']" to display
     Then I click on element having xpath "//select[@name='password_type']/.."
-    Then I wait 5 seconds for element having xpath "//div[@id='bs-select-28']/ul/li[2]/a/span" to display
+    Then I wait 5 seconds for element having xpath "//div[@id='bs-select-27']/ul/li[2]/a/span" to display
 
   Scenario Outline: Verify types of password (Dropdown List)
-    Then element having xpath "//div[@id='bs-select-28']/ul/li[<value>]/a/span" should have partial text as "<type>"
+    Then element having xpath "//div[@id='bs-select-27']/ul/li[<value>]/a/span" should have partial text as "<type>"
     Examples:
     |value|  |type|
     |2|  |Lender|
@@ -77,23 +56,29 @@ Feature: Test View Page for Admin Login
     |21|  |Other|
 
   Scenario: Select Password type
-    Then I click on element having xpath "//div[@id='bs-select-28']/ul/li[2]/a/span"
+    Then I click on element having xpath "//div[@id='bs-select-27']/ul/li[2]/a/span"
 
   Scenario: Add password1
-    Then I enter "password::admin1::vendor" into input field having id "id_password_name"
-    Then I enter "password::admin1::username" into input field having id "id_user_name"
-    Then I enter "password::admin1::password" into input field having id "id_user_password"
-    Then I enter "password::admin1::url" into input field having id "id_user_password_url"
+    Then I enter "password::user1::vendor" into input field having id "id_password_name"
+    Then I enter "password::user1::username" into input field having id "id_user_name"
+    Then I enter "password::user1::password" into input field having id "id_user_password"
+    Then I enter "password::user1::url" into input field having id "id_user_password_url"
     Then I click on element having xpath "//*[@id='id_password_form']/div/div[6]/div/button"
 
-  Scenario: Check Password details are reflected in table
+  Scenario: Check index in table
     Then I wait 5 seconds for element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" to display
     Then element having xpath "//*[@id='password_table']/tr/th" should have partial text as "1"
-    Then element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" should have attribute value as "password::admin1::vendor"
+  Scenario: Check vendor in table
+    Then element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" should have attribute value as "password::user1::vendor"
+  Scenario: Check type in table
     Then element having xpath "//*[@id='password_table']/tr/td[2]" should have partial text as "Lender"
-    Then element having xpath "//*[@id='password_table']/tr/td[3]/input" should have attribute value as "password::admin1::username"
-    Then element having xpath "//*[@id='password_table']/tr/td[4]/input" should have attribute value as "password::admin1::password"
-    Then element having xpath "//*[@id='password_table']/tr/td[5]/input" should have attribute value as "password::admin1::url"
+  Scenario: Check username in table
+    Then element having xpath "//*[@id='password_table']/tr/td[3]/input" should have attribute value as "password::user1::username"
+  Scenario: Check password in table
+    Then element having xpath "//*[@id='password_table']/tr/td[4]/input" should have attribute value as "password::user1::password"
+  Scenario: Check url in table
+    Then I sleep for 2 seconds
+    Then element having xpath "//*[@id='password_table']/tr/td[5]/input" should have attribute value as "password::user1::url"
 
   Scenario: Check whether password has remove button
     Then element having xpath "//*[@id='password_table']/tr/td[6]/button/small" should be present
@@ -106,25 +91,26 @@ Feature: Test View Page for Admin Login
 
   Scenario: Add and Save Password
     Then I click on element having xpath "//select[@name='password_type']/.."
-    Then I wait 5 seconds for element having xpath "//div[@id='bs-select-28']/ul/li[2]/a/span" to display
-    Then I click on element having xpath "//div[@id='bs-select-28']/ul/li[2]/a/span"
-    Then I enter "password::admin2::vendor" into input field having id "id_password_name"
-    Then I enter "password::admin2::username" into input field having id "id_user_name"
-    Then I enter "password::admin2::password" into input field having id "id_user_password"
-    Then I enter "password::admin2::url" into input field having id "id_user_password_url"
+    Then I wait 5 seconds for element having xpath "//div[@id='bs-select-27']/ul/li[2]/a/span" to display
+    Then I click on element having xpath "//div[@id='bs-select-27']/ul/li[2]/a/span"
+    Then I enter "password::user2::vendor" into input field having id "id_password_name"
+    Then I enter "password::user2::username" into input field having id "id_user_name"
+    Then I enter "password::user2::password" into input field having id "id_user_password"
+    Then I enter "password::user2::url" into input field having id "id_user_password_url"
     Then I click on element having xpath "//*[@id='id_password_form']/div/div[6]/div/button"
     Then I wait 5 seconds for element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" to display
-    Then element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" should have attribute value as "password::admin2::vendor"
+    Then element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" should have attribute value as "password::user2::vendor"
     Then I click on element having xpath "//*[@id='id_password_form']/div/div[8]/div/button"
 
   Scenario: Verify added password is displayed in table
     Then I wait 5 seconds for element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" to display
     Then element having xpath "//*[@id='password_table']/tr/th" should have partial text as "1"
-    Then element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" should have attribute value as "password::admin2::vendor"
+    Then element having xpath "//*[@id='password_table']/tr/td[1]/input[1]" should have attribute value as "password::user2::vendor"
     Then element having xpath "//*[@id='password_table']/tr/td[2]" should have partial text as "Lender"
-    Then element having xpath "//*[@id='password_table']/tr/td[3]/input" should have attribute value as "password::admin2::username"
-    Then element having xpath "//*[@id='password_table']/tr/td[4]/input" should have attribute value as "password::admin2::password"
-    Then element having xpath "//*[@id='password_table']/tr/td[5]/input" should have attribute value as "password::admin2::url"
+    Then element having xpath "//*[@id='password_table']/tr/td[3]/input" should have attribute value as "password::user2::username"
+    Then element having xpath "//*[@id='password_table']/tr/td[4]/input" should have attribute value as "password::user2::password"
+    Then element having xpath "//*[@id='password_table']/tr/td[5]/input" should have attribute value as "password::user2::url"
+    Then I sleep for 2 seconds
 
 
 

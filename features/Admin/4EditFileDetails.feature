@@ -4,9 +4,9 @@ Feature: Test Edit File Details Model
     Scenario: Navigate to Edit File Details model
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::admin::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I enter "createfile::admin::lastname" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
       Then I wait 15 seconds for element having xpath "//*[@id='table_all']/tbody/tr/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::name"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::lastname"
       Then I click on element having xpath "//table[@id='table_all']/tbody/tr/td[7]"
       Then I wait 5 seconds for element having xpath "//div[@class='modal-title']" to display
       Then element having xpath "//div[@class='modal-title']" should have partial text as "Edit File Details"
@@ -28,7 +28,7 @@ Feature: Test Edit File Details Model
       Then element having xpath "//label[text()='PayOff Exp']" should be present
 
     Scenario: Verify that File Name is reflected as per entered while file creation
-      Then element having xpath "//label[text()='File Name']/../input" should have attribute value as "createfile::admin::name"
+      Then element having xpath "//label[text()='File Name']/../input" should have attribute value as "createfile::admin::lastname"
 
   #  Scenario: Verify that Receive Date is reflected as per entered while file creation
    #   Then element having xpath "//label[text()='Receive Date']/../input" should have attribute value as "01/28/2021"
@@ -276,7 +276,7 @@ Feature: Test Edit File Details Model
       Then I wait 5 seconds for element having xpath "//div[@class='modal-title']" to display
       Then element having xpath "//div[@class='modal-title']" should have partial text as "Edit File Details"
       Then I clear input field having xpath "//label[text()='File Name']/../input"
-      Then I enter "createfile::admin::filename" into input field having xpath "//label[text()='File Name']/../input"
+      Then I enter "createfile::admin::lastname" into input field having xpath "//label[text()='File Name']/../input"
       Then I click on element having xpath "//*[@id='myModal']//button[@type='button'][2]"
       Then I sleep for 5 seconds
 

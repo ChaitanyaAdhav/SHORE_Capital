@@ -1,12 +1,12 @@
-@processorconversetion
-Feature: Test Conversation History of Processor
+@adminconversetion
+Feature: Test Conversation History of Admin
 
     Scenario: Navigate to Conversation History
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::valid::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
-      Then I wait 15 seconds for element having xpath "//td[contains(text(),'AutomationTest')]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::valid::name"
+      Then I enter "createfile::admin::lastname" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I wait 15 seconds for element having xpath "//td[contains(text(),'AutomationTestAdmin')]" to display
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::lastname"
       Then I click on element having xpath "//*[@id='table_all']/tbody/tr/td[11]/span[2]"
       Then I wait 5 seconds for element having xpath "//div[contains(text(),'Conversation Log')]" to display
       Then element having xpath "//div[contains(text(),'Conversation Log')]" should have partial text as "Conversation Log"
@@ -16,10 +16,10 @@ Feature: Test Conversation History of Processor
       Then element having xpath "//div[contains(text(),'Add New')]" should have partial text as "Add New Conversation"
 
     Scenario: Add new Conversation (valid)
-      Then I enter "createfile::valid::note2" into input field having id "note_text"
+      Then I enter "createfile::admin::note2" into input field having id "note_text"
       Then I click on element having id "sub_mit"
       Then I sleep for 2 seconds
-      Then element having xpath "//div[@class='card-body']/div[2]/div[1]/div[2]" should have partial text as "createfile::valid::note2"
+      Then element having xpath "//div[@class='card-body']/div[2]/div[1]/div[2]" should have partial text as "createfile::admin::note2"
 
     Scenario:  Check content of table of Conversation log
       Then element having xpath "//div[@class='row my-2']/div[1]/div" should have partial text as "Date & Time"

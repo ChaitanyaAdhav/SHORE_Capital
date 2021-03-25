@@ -1,4 +1,4 @@
-admin:
+user:
   communication1: "CreateTask"
   communication2: "InProgressTask"
   communication3: "InExceptionTask"

@@ -26,6 +26,7 @@ Feature: Validate Loan Officers Dashboard
 
     Scenario: Verify content of table for Archived
       Then I click on element having id "8-status_tab"
+      Then I sleep for 2 seconds
       Then I wait 15 seconds for element having xpath "//*[@id='DataTables_Table_0']//th[1]" to display
       Then element having xpath "//*[@id='DataTables_Table_0']//th[1]" should have partial text as "#"
       Then element having xpath "//*[@id='DataTables_Table_0']//th[2]" should have partial text as "File"
