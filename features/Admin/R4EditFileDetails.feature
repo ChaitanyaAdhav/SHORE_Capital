@@ -4,11 +4,11 @@ Feature: Test Edit File Details Model for Reverse Mortgage
     Scenario: Navigate to Edit File Details model
       Then I click on element having id "all-tab"
       Then I wait 15 seconds for element having xpath "//div[@id='table_all_filter']//input[@type='search']" to display
-      Then I enter "createfile::admin::name" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
+      Then I enter "createfile::admin::lastname" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
       Then I wait 15 seconds for element having xpath "//*[@id='table_all']/tbody/tr/td[2]" to display
-      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::name"
+      Then element having xpath "//*[@id='table_all']/tbody/tr/td[2]" should have partial text as "createfile::admin::lastname"
       Then I click on element having xpath "//table[@id='table_all']/tbody/tr/td[6]"
-      Then I wait 5 seconds for element having xpath "//div[@class='modal-title']" to display
+      Then I wait 15 seconds for element having xpath "//div[@name='file_id']" to display
       Then element having xpath "//div[@class='modal-title']" should have partial text as "Edit File Details"
 
     Scenario: Check options available in Model
@@ -27,8 +27,8 @@ Feature: Test Edit File Details Model for Reverse Mortgage
       Then element having xpath "//label[text()='Escrow Company']" should be present
       Then element having xpath "//label[text()='PayOff Exp']" should be present
 
-   # Scenario: Verify that File Name is reflected as per entered while file creation
-    #  Then element having id "id_file_id" should have partial text as "createfile::admin::name"
+    Scenario: Verify that File Name is reflected as per entered while file creation
+      Then element having xpath "//label[text()='File Name']/../input" should have attribute value as "createfile::admin::lastname"
 
   #  Scenario: Verify that Receive Date is reflected as per entered while file creation
    #   Then element having xpath "//label[text()='Receive Date']/../input" should have attribute value as "01/28/2021"
@@ -38,10 +38,10 @@ Feature: Test Edit File Details Model for Reverse Mortgage
 #
 #    Scenario: Verify that Insurance is reflected as per entered while file creation
 #      Then element having xpath "//label[text()='Insurance']/../input" should have partial text as "createfile::admin::insurance"
-#
-#    Scenario: Verify that 2nd apprisal is reflected as per entered while file creation
-#      Then element having xpath "//label[text()='2nd Appraisal']/../select" should have partial text as "TBD"
-#
+
+    Scenario: Verify that 2nd apprisal is reflected as per entered while file creation
+      Then element having xpath "//label[text()='2nd Appraisal']/../select" should have partial text as "TBD"
+
 #    Scenario: Verify that HOA is reflected as per entered while file creation
 #      Then element having xpath "//label[text()='HOA']/../input" should have partial text as "createfile::admin::hoa"
 #
@@ -50,17 +50,17 @@ Feature: Test Edit File Details Model for Reverse Mortgage
 #
 #    Scenario: Verify that Lender is reflected as per entered while file creation
 #      Then element having xpath "//label[text()='Lender']/../input" should have partial text as "createfile::admin::lender"
-#
-#    Scenario: Verify that Status is reflected as per entered while file creation
-#      Then element having xpath "//label[text()='Status']/../select" should have partial text as "Docs"
-#
-#    Scenario: Verify that Sub Status is reflected as per entered while file creation
-#      Then element having xpath "//label[text()='Sub Status']/../select" should have partial text as "Docs Out"
-#
-#    Scenario: Verify that Appraisal Ordered Date is reflected as per entered while file creation
-#      Then element having xpath "//label[text()='Appraisal Ordered']/../select" should have partial text as "OR"
+
+    Scenario: Verify that Status is reflected as per entered while file creation
+      Then element having xpath "//label[text()='Status']/../select" should have partial text as "Docs"
+
+    Scenario: Verify that Sub Status is reflected as per entered while file creation
+      Then element having xpath "//label[text()='Sub Status']/../select" should have partial text as "Docs Out"
+
+    Scenario: Verify that Appraisal Ordered Date is reflected as per entered while file creation
+      Then element having xpath "//label[text()='Appraisal Ordered']/../select" should have partial text as "OR"
 #      Then element having xpath "//label[text()='Appraisal Ordered']/../input" should have partial text as "01/19/2021"
-#
+
 #    Scenario: Verify that Escrow Company is reflected as per entered while file creation
 #      Then element having xpath "//label[text()='Escrow Company']/../input" should have partial text as "createfile::admin::escrowcomp"
 
@@ -159,6 +159,7 @@ Feature: Test Edit File Details Model for Reverse Mortgage
       Then I click on element having xpath "//div[@class='datepicker-days']//td[text()='23']"
 
     Scenario: To submit details
+      Then I sleep for 20 seconds
       Then I click on element having xpath "//*[@id='myModal']//button[@type='button'][2]"
       Then I sleep for 3 seconds
       Then I click on element having id "all-tab"
@@ -216,6 +217,6 @@ Feature: Test Edit File Details Model for Reverse Mortgage
       Then element having xpath "//div[@class='modal-title']" should have partial text as "Edit File Details"
       Then I sleep for 3 seconds
       Then I clear input field having xpath "//label[text()='File Name']/../input"
-      Then I enter "createfile::admin::name" into input field having xpath "//label[text()='File Name']/../input"
+      Then I enter "createfile::admin::lastname" into input field having xpath "//label[text()='File Name']/../input"
       Then I click on element having xpath "//*[@id='myModal']//button[@type='button'][2]"
       Then I sleep for 3 seconds
