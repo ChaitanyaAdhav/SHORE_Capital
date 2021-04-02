@@ -81,9 +81,3 @@ Feature: Test View Page for Admin Login (Loan Details)
 
 
 
-
-
-
-
-
-
