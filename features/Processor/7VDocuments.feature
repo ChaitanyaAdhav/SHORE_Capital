@@ -1,5 +1,5 @@
 @proviewdoc
-Feature: Test View Page for Admin Login (Documents)
+Feature: Test View Page for Processor Login (Documents)
 
   ##############
   Scenario: Navigate to View page

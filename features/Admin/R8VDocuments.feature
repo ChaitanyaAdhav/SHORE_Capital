@@ -1,5 +1,5 @@
-@asstviewdoc
-Feature: Test View Page for Assistant Login (Documents)
+@radminviewdoc
+Feature: Test View Page for Admin Login (Documents)
 
   ##############
   Scenario: Navigate to View page
@@ -8,7 +8,7 @@ Feature: Test View Page for Assistant Login (Documents)
     #Then I enter "DocTest" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
     Then I enter "Do_not_modify" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
     #Then I wait 5 seconds for element having xpath "//table[@id='table_all']//td[text()='DocTest']" to display
-    Then I wait 15 seconds for element having xpath "//table[@id='table_all']//td[text()='Do_not_modify']" to display
+    Then I wait 5 seconds for element having xpath "//table[@id='table_all']//td[text()='Do_not_modify']" to display
     Then I click on element having xpath "//*[@id='table_all']/tbody/tr[1]/td[1]/a"
 
   Scenario: Verify that user have landed on Loan Details page
@@ -90,7 +90,7 @@ Feature: Test View Page for Assistant Login (Documents)
     |view|
 
   Scenario: Verify Uploader name should displayed below file name
-    Then element having xpath "//span[text()='view']/..//small[1]" should have partial text as "login::assistant::name"
+    Then element having xpath "//span[text()='view']/..//small[1]" should have partial text as "login::admin::name"
   ###############################################################
  ########## Scenario: Verify User can Download all documents at once
     ##################################################

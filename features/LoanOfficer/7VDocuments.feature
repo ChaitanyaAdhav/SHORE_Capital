@@ -1,5 +1,5 @@
 @loviewdoc
-Feature: Test View Page for Admin Login (Documents)
+Feature: Test View Page for Loan Officer Login (Documents)
 
   ##############
   Scenario: Navigate to View page
