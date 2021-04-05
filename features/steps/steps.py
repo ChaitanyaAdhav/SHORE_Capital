@@ -10,6 +10,7 @@ from methods import nav, click, input, wait
 from methods.locator import locate_element
 from methods import assertions
 from methods import alerts
+from login import admin_login
 from selenium import webdriver
 use_step_matcher("re")
 
@@ -175,6 +176,9 @@ def switch_to_window(context, loc_type, loc_value):
 def close(context):
     context.browser.close()
 
+# @then('I\s+login\s+as\s+admin')
+# def login(context):
+#     admin_login(context)
 
 
 

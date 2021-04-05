@@ -1,8 +1,17 @@
 @asstcreatefile
 Feature: Create File Menu
 
-    Scenario: Navigate to create file page
-      Then I click on element having xpath "//div[@id='loan-details']/div/span/a"
+    Scenario: Navigate to create file model
+      Then I click on element having xpath "//div[@id='loan-details']/div/a"
+      Then I wait 15 seconds for element having xpath "//span[@id='CreateFileModalLabel']" to display
+      Then element having xpath "//span[@id='CreateFileModalLabel']" should have partial text as "Do you want to Create a New File for"
+
+    Scenario: Verify buttons available in model
+      Then element having xpath "//div[@id='CreateFileModal']//div/a[1]" should have partial text as "Forward Mortgage"
+      Then element having xpath "//div[@id='CreateFileModal']//div/a[2]" should have partial text as "Reverse Mortage"
+
+    Scenario: Navigate to Forward Mortgage Create File
+      Then I click on element having xpath "//div[@id='CreateFileModal']//*[text()='Forward Mortgage']"
       Then I wait 15 seconds for element having xpath "//div[@class='text-center']/button[@type='submit']" to display
       Then element having class "section-title" should have partial text as "Create New File"
 

@@ -53,7 +53,7 @@ Feature: Validate Admins Dashboard
       Then element having xpath "//*[@id='tabs_nav']/li[9]/a" should have partial text as "All"
 
     Scenario: Verify Create file button is available for processor login
-      Then element having xpath "//*[@id="loan-details"]//*[contains(text(),'Create File')]" should be present
+      Then element having xpath "//div[@id='loan-details']/div/a/i" should be present
 
     Scenario: Verify substatus available in Docs tab
       Then element having id "4-tab_substatus" should have partial text as "Docs Out"
@@ -267,4 +267,7 @@ Feature: Validate Admins Dashboard
       Then I enter "xxxx" into input field having xpath "//div[@id='table_all_filter']//input[@type='search']"
       Then I wait 15 seconds for element having xpath "//tr[@class='odd']" to display
       Then element having xpath "//*[@id='table_all']//tr/td[2]/span" should not be present
-      Then element having xpath "//tr[@class='odd']" should have partial text as "No matching records found"
+      Then element having xpath "//tr[@class='odd']/td" should have partial text as "No matching records found"
+
+    Scenario: Close window
+      Then I close current tab
